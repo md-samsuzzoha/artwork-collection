@@ -22,7 +22,7 @@ npm run test:coverage
 ```
 
 The summary of the coverage report is shown below
-![image](site-coverage.png)
+![image](https://user-images.githubusercontent.com/20539488/189478741-be672649-60c3-40f9-a91d-ef6940dc0205.png)
 
 The project will be run in http://localhost:4200
 
@@ -32,7 +32,7 @@ npm run build
 
 The build file will be stored in the dist folder. Run the dist folder to any live server
 
-![image](site-preview.png)
+![image](https://user-images.githubusercontent.com/20539488/189478759-63f08e78-0bac-47ac-bcce-568e36774172.png)
 
 ### Walkthrough
 
