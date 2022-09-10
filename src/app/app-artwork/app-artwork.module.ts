@@ -47,7 +47,8 @@ const routes: Routes = [
     NxCardModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [
     ArtworkService

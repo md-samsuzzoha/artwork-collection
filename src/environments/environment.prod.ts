@@ -5,4 +5,5 @@ export const environment = {
 
   //Business Services
 	BusinessService: `${baseUrl}/api/v1/artworks`,
+  backupImage: 'https://upload.wikimedia.org/wikipedia/commons/3/32/Art_Institute_of_Chicago_logo.svg'
 };

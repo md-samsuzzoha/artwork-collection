@@ -1,5 +1,6 @@
 export interface IArtworkResponse {
     id: number;
+    image: string;
     image_id: string;
     title: string,
     artist_title: string;
@@ -9,4 +10,5 @@ export interface IArtworkResponse {
     date_end: number;
     material_titles: string[];
     style_title: string;
+    originYear: string;
 }

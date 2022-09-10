@@ -1,0 +1,11 @@
+.card-block {
+  min-height: 450px;
+  margin-right: -8px !important;
+  margin-left: -8px !important;
+  width: 100%;
+  img {
+    max-height: 250px;
+    aspect-ratio: 0.5/1;
+    object-fit: contain;
+  }
+}

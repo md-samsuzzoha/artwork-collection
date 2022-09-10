@@ -1,6 +1,5 @@
 import { of } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { IPagination } from '../model/IPagination';
 import { ArtworkService } from './artwork.service';
 
 describe('ArtworkService', () => {

@@ -1,7 +1,7 @@
 <div nxLayout="grid">
   <div nxRow>
-    <div *ngFor="let art of artworks; index as i" nxCol="12,12,6,4,3">
-      <nx-card class="nx-margin-bottom-xs card-block">
+    <div *ngFor="let art of artworks;" nxCol="12,12,6,4,3">
+      <nx-card class="nx-margin-bottom-2m card-block">
         <div class="card">
           <img [src]="art.image" alt="product image" />
           <div class="content">
@@ -10,13 +10,13 @@
                 nxCopytext
                 class="nx-font-weight-semibold nx-margin-bottom-2xs"
               >
-                {{art.artworkName}}
+                {{art?.title}}
               </h2>
 
-              <h3 nxCopytext class="nx-margin-y-0">{{art.artistTitle}}</h3>
-              <span nxCopytext>{{art.originYear}}</span>
+              <h3 nxCopytext class="nx-margin-y-0">{{art?.artist_title}}</h3>
+              <span nxCopytext>{{art?.originYear}}</span>
               <p nxCopytext="medium" class="nx-margin-y-0">
-                {{art.materialsTitle}}
+                {{art?.material_titles}}
               </p>
             </div>
           </div>

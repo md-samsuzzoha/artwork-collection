@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
-import { IArtwork } from '../../model/IArtwork';
+import { IArtworkResponse } from '../../model/IArtworkResponse';
 import { IPagination } from '../../model/IPagination';
 import { ArtworkService } from '../../services/artwork.service';
 
@@ -18,8 +18,8 @@ export class ArtworkListComponent implements OnInit {
   selectedItem: any[] = [];
   sortBy: string = '';
 
-  artworks: IArtwork[] = [];
-  filteredArtworks: IArtwork[] = [];
+  artworks: IArtworkResponse[] = [];
+  filteredArtworks: IArtworkResponse[] = [];
   styleTitles: any[] = [];
   pagination: IPagination = {
     current_page: 0,
@@ -38,6 +38,10 @@ export class ArtworkListComponent implements OnInit {
     this.registerStyleFilter();
   }
 
+  /**
+     * Function to get artworks collections by api get call
+     * @param pages is object contains current_page and data limit
+   */
   getArtworkCollection(pages: IPagination) {
     this.isLoading = true;
     this.styleTitles = [];
@@ -70,13 +74,22 @@ export class ArtworkListComponent implements OnInit {
     this.pagination.current_page = n;
     this.getArtworkCollection(this.pagination);
   }
-
+  /**
+   * 
+   * @param option 
+   * @returns 
+   */
   selectLabel(option: any): string {
     return option.titleName
       ? `${option.titleName} (${option.items.length})`
       : `Untitled (${option.items.length})`;
   }
 
+  /**
+     * Function to perform hello world
+     * @param collection contains all artworks & @param property contains by which property it will grouped by
+     * @returns a group of title by traves all current artworks
+   */
   groupByStyleTitleProp(collection: any, property: string) {
     var i = 0,
       val,
@@ -120,9 +133,9 @@ export class ArtworkListComponent implements OnInit {
     }
   }
 
-  sortByYear(data: IArtwork[]) {
-    data.sort(function(a,b) {
-        return a.dateEnd - b.dateEnd;
+  sortByYear(data: IArtworkResponse[]) {
+    return data.sort(function(a,b) {
+        return a.date_end - b.date_end;
     });
   }
 

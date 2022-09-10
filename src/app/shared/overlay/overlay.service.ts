@@ -1,6 +1,6 @@
-import { Injectable, TemplateRef, ViewContainerRef } from '@angular/core';
 import { Overlay, OverlayConfig, OverlayRef, PositionStrategy } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
+import { Injectable, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Injectable()
 
