@@ -126,7 +126,7 @@ export class ArtworkListComponent implements OnInit {
 
   onTriggerSortItem(value: string) {
     this.sortBy = value;
-    if(value === 'endDate') {
+    if(value === 'date_end') {
         this.sortByYear(this.artworks);
     } else {
         this.sortByName(this.artworks, value)
