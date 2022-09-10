@@ -1,0 +1,46 @@
+<h2
+  nxHeadline="subsection-medium"
+  class="nx-font-weight-bold nx-margin-top-2xs nx-margin-bottom-s"
+  style="text-align: center">
+  {{title}}
+</h2>
+
+<div nxLayout="grid">
+  <div nxRow class="center">
+    <div nxCol="12, 12, 4">
+      <nx-formfield nxLabel="Filter:">
+        <nx-multi-select
+              placeholder="Choose options"
+              [formControl]="control"
+              [options]="styleTitles"
+              [selectLabel]="selectLabel"
+          ></nx-multi-select>
+      </nx-formfield>
+    </div>
+
+    <div nxCol="12, 12, 4">
+      <nx-formfield nxLabel="Sort by">
+        <nx-dropdown placeholder="Choose option" (selectionChange)="onTriggerSortItem($event.value)">
+          <nx-dropdown-item nxValue="artworkName">Name</nx-dropdown-item>
+          <nx-dropdown-item nxValue="artistTitle">Artist</nx-dropdown-item>
+          <nx-dropdown-item nxValue="endDate">Date</nx-dropdown-item>
+        </nx-dropdown>
+      </nx-formfield>
+    </div>
+  </div>
+</div>
+
+<app-card [artworks]="artworks"></app-card>
+
+<nx-pagination
+  class="center nx-margin-bottom-2xs"
+  [nxCount]="pagination.total"
+  [nxPage]="pagination.current_page"
+  [nxPerPage]="pagination.limit"
+  nxType="advanced"
+  (nxGoPrev)="prevPage()"
+  (nxGoNext)="nextPage()"
+  (nxGoPage)="goToPage($event)">
+</nx-pagination>
+
+<app-progress-spinner [isShow]="isLoading"></app-progress-spinner>

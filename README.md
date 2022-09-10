@@ -1,27 +1,54 @@
-# ArtworkCollection
+## Art Collection
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9.
+It is a Art Collection portal with The Art Institute of Chicago api integration
 
-## Development server
+### Steps to run the project without docker
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```
+npm install
+npm start
+```
 
-## Code scaffolding
+To run the test
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm run test
+```
 
-## Build
+To get the coverage report of the test
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+npm run test:coverage
+```
 
-## Running unit tests
+The summary of the coverage report is shown below
+![image](site-coverage.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The project will be run in http://localhost:4200
 
-## Running end-to-end tests
+```
+npm run build
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The build file will be stored in the dist folder. Run the dist folder to any live server
 
-## Further help
+![image](site-preview.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Walkthrough
+
+1. In the root url, you will find the Artwork Collection. If there is any image from the api, the image will be shown. Otherwise default image will be shown
+2. Click on filter and choose any one them, it will show filtered artwork collection. You can choose multiple title and get result regarding those selection.
+3. Click on short and select one of them, artworks will be shown as per the shorted property
+4. You will see pagination at the bottom of the Artworks Collection, you can choose any page from there and you can navigate between pages by clicking on those navigations.
+
+### Features
+
+1. Single Page Applicaiton
+2. The project is build from scratch with angular cli
+3. Unit test coverage. Jest is used for implementing test spec.
+4. Mobile Responsive
+5. Rxjs operator is used to prevent manage subscription
+6. Lazy loaded routing implemented
+7. HttpClientModule used to get api data
+
+Feel free to reach out, if you think any improvement point of the project

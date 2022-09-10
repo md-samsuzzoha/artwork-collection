@@ -1,0 +1,27 @@
+<div nxLayout="grid">
+  <div nxRow>
+    <div *ngFor="let art of artworks; index as i" nxCol="12,12,6,4,3">
+      <nx-card class="nx-margin-bottom-xs card-block">
+        <div class="card">
+          <img [src]="art.image" alt="product image" />
+          <div class="content">
+            <div>
+              <h2
+                nxCopytext
+                class="nx-font-weight-semibold nx-margin-bottom-2xs"
+              >
+                {{art.artworkName}}
+              </h2>
+
+              <h3 nxCopytext class="nx-margin-y-0">{{art.artistTitle}}</h3>
+              <span nxCopytext>{{art.originYear}}</span>
+              <p nxCopytext="medium" class="nx-margin-y-0">
+                {{art.materialsTitle}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </nx-card>
+    </div>
+  </div>
+</div>
