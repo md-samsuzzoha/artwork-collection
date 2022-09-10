@@ -53,7 +53,7 @@ export class ArtworkListComponent implements OnInit {
         this.artworks = res.data;
         this.pagination = res.pagination;
         this.isLoading = false;
-        this.styleTitles = this.groupByStyleTitleProp(res.data, 'styleTitles');
+        this.styleTitles = this.groupByStyleTitleProp(res.data, 'style_title');
         if(this.sortBy) {
           this.onTriggerSortItem(this.sortBy);
         }
